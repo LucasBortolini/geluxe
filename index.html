@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geluxe - Gelo Premium</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet"></head>
+<body>
+    <div id="snow"></div>
+    <!-- Header -->
+    <header class="bg-indigo-300 text-white p-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold">Geluxe</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#sobre" class="hover:underline text-lg">Sobre</a></li>
+                    <li><a href="#contato" class="hover:underline text-lg">Contato</a></li>
+                    <li><a href="#clientes" class="hover:underline text-lg">Clientes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Banner com imagem de fundo -->
+    <section class="bg-contain bg-no-repeat bg-center bg-indigo-300 text-white text-center banner-bg-img">
+        <img src="./images/bg.png" class="opacity-0 w-full" />
+        <div class="top-1/2 left-1/2 absolute transform -translate-x-1/2 -translate-y-1/2">
+            <h2 class="text-5xl font-bold"><i>Gelo Premium</i> para todas as ocasiões</h2>
+            <p class="mt-4 text-4xl">Distribuição rápida e confiável</p>
+        </div>
+    </section>
+
+
+    <!-- Sobre a Empresa -->
+    <section id="sobre" class="container bg-gray-100 py-20 text-center">
+        <h2 class="text-4xl font-bold mb-8 text-indigo-300 inria-sans-bold">Sobre a Geluxe</h2>
+        <p class="text-lg text-indigo-300 max-w-3xl mx-auto">A Geluxe é uma empresa especializada na produção e distribuição de gelo de alta qualidade, atendendo bares, restaurantes, eventos e muito mais. Nosso compromisso é garantir que nossos clientes tenham gelo sempre fresco e pronto para uso.</p>
+    </section>
+
+    <!-- Formulário de Contato -->
+    <section id="contato" class="bg-indigo-300 py-20">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-semibold text-center mb-8 text-white inria-sans-bold">Entre em contato</h2>
+            <form action="#" class="max-w-lg mx-auto bg-white p-8 rounded shadow-lg space-y-6">
+                <div>
+                    <label for="name" class="block text-gray-400 font-semibold">Nome</label>
+                    <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" placeholder="Seu nome">
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-400 font-semibold">Email</label>
+                    <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" placeholder="Seu email">
+                </div>
+                <div>
+                    <label for="message" class="block text-gray-400 font-semibold">Mensagem</label>
+                    <textarea id="message" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" rows="5" placeholder="Sua mensagem"></textarea>
+                </div>
+                <button type="submit" class="bg-indigo-300 text-white py-3 px-6 rounded font-bold hover:bg-blue-700 transition-colors">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Banner -->
+    <section class="bg-gray-100 text-indigo-300 text-center py-24">
+        <h2 class="text-4xl font-bold">Distribuição rápida e confiável</h2>
+        <p class="mt-4 text-xl">Sempre gelado, sempre pronto.</p>
+    </section>
+
+    <!-- Clientes Satisfeitos -->
+    <section id="clientes" class="bg-indigo-300 mx-auto py-20 text-center">
+        <div class="container">
+        <h2 class="text-4xl font-bold mb-8 text-white">Alguns de nossos clientes satisfeitos</h2>
+            <div class="flex justify-center space-x-8 overflow-x-auto">
+                <img src="logo1.png" alt="Logo cliente 1" class="h-16">
+                <img src="logo2.png" alt="Logo cliente 2" class="h-16">
+                <img src="logo3.png" alt="Logo cliente 3" class="h-16">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-300 text-white teste text-center py-4">
+        <p>&copy; 2024 Geluxe. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/snow.js"></script>
+</body>
+</html>
