@@ -7,7 +7,7 @@ body {
 }
 
 body {
-    background-color: #45B3BF;
+    background-color: #235b72;
 }
 
 .header-logo {
@@ -19,7 +19,7 @@ body {
 }
 
 .btn-color {
-    background-color: #45B3BF;
+    background-color: #235b72;
 }
 
 .btn-color:hover {
@@ -41,11 +41,11 @@ body {
 }
 
 .section-title {
-    color: #45B3BF;
+    color: #235b72;
 }
 
 .section-text{
-    color: #45B3BF;
+    color: #235b72;
 }
 
 .teste {
@@ -55,3 +55,5 @@ body {
             backdrop-filter: blur(5px);
     padding: 16px;
 }
+
+/* rgb 35 91 114 */
