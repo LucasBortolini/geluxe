@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geluxe - Gelo Premium</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
     <link href="./css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet"></head>
 <body>
     <div id="snow"></div>
     <!-- Header -->
-    <header class="bg-indigo-300 text-white p-6">
+    <header class="text-white py-4 px-2 md:px-6">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-extrabold">Geluxe</h1>
+            <img src="./images/logo.png" class="hidden md:block header-logo">
+            <img src="./images/logo-mobile.png" class="block md:hidden header-logo-mobile">
             <nav>
                 <ul class="flex space-x-6">
                     <li><a href="#sobre" class="hover:underline text-lg">Sobre</a></li>
                     <li><a href="#contato" class="hover:underline text-lg">Contato</a></li>
                     <li><a href="#clientes" class="hover:underline text-lg">Clientes</a></li>
+                    <li><a href="#galeria" class="hover:underline text-lg">Galeria</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,66 +32,140 @@
 
 
     <!-- Banner com imagem de fundo -->
-    <section class="bg-contain bg-no-repeat bg-center bg-indigo-300 text-white text-center banner-bg-img">
+    <section class="hidden md:block bg-contain bg-no-repeat bg-center text-white text-center banner-bg-img">
         <img src="./images/bg.png" class="opacity-0 w-full" />
-        <div class="top-1/2 left-1/2 absolute transform -translate-x-1/2 -translate-y-1/2">
-            <h2 class="text-5xl font-bold"><i>Gelo Premium</i> para todas as ocasiões</h2>
-            <p class="mt-4 text-4xl">Distribuição rápida e confiável</p>
+        <div class="top-1/2 left-1/2 absolute flex flex-col items-center transform -translate-x-1/2 -translate-y-1/2">
+            <h2 class="mt-16 text-3xl font-bold"><i>Gelo Premium</i> para todas as ocasiões</h2>
+            <p class="mb-4 text-2xl">Distribuição rápida e confiável</p>
+            <img src="./images/banner.JPG" class="w-4/5 rounded teste">
         </div>
     </section>
 
 
     <!-- Sobre a Empresa -->
     <section id="sobre" class="container bg-gray-100 py-20 text-center">
-        <h2 class="text-4xl font-bold mb-8 text-indigo-300 inria-sans-bold">Sobre a Geluxe</h2>
-        <p class="text-lg text-indigo-300 max-w-3xl mx-auto">A Geluxe é uma empresa especializada na produção e distribuição de gelo de alta qualidade, atendendo bares, restaurantes, eventos e muito mais. Nosso compromisso é garantir que nossos clientes tenham gelo sempre fresco e pronto para uso.</p>
+        <h2 class="text-4xl font-bold mb-8 inria-sans-bold section-title">Sobre a Geluxe</h2>
+        <p class="text-lg max-w-3xl mx-auto section-text">
+            A Geluxe é uma empresa especializada na produção e distribuição de gelo de alta qualidade, atendendo bares, restaurantes, eventos e muito mais. Nosso compromisso é garantir que nossos clientes tenham gelo sempre fresco e pronto para uso.
+        </p>
     </section>
 
     <!-- Formulário de Contato -->
-    <section id="contato" class="bg-indigo-300 py-20">
-        <div class="container mx-auto">
+    <section id="contato" class="py-20">
+        <div class="container mx-auto px-4">
             <h2 class="text-4xl font-semibold text-center mb-8 text-white inria-sans-bold">Entre em contato</h2>
-            <form action="#" class="max-w-lg mx-auto bg-white p-8 rounded shadow-lg space-y-6">
+            <form action="https://api.web3forms.com/submit" method="POST" class="max-w-lg mx-auto bg-white p-8 rounded shadow-lg space-y-6">
+                <input type="hidden" name="access_key" value="a847f794-bfa5-4834-a731-705bf9c4e8e4">
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 <div>
                     <label for="name" class="block text-gray-400 font-semibold">Nome</label>
-                    <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" placeholder="Seu nome">
+                    <input type="text" name="name" id="name" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" placeholder="Seu nome" required>
                 </div>
                 <div>
-                    <label for="email" class="block text-gray-400 font-semibold">Email</label>
-                    <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" placeholder="Seu email">
+                    <label for="business-name" class="block text-gray-400 font-semibold">Empresa</label>
+                    <input type="text" name="business-name" id="business-name" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" placeholder="Nome da sua empresa" required>
+                </div>
+                <div>
+                    <label for="tel" class="block text-gray-400 font-semibold">Telefone</label>
+                    <input type="phone" name="phone" id="tel" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" placeholder="Seu telefone" maxlength="15" onkeyup="handlePhone(event)" required>
                 </div>
                 <div>
                     <label for="message" class="block text-gray-400 font-semibold">Mensagem</label>
-                    <textarea id="message" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" rows="5" placeholder="Sua mensagem"></textarea>
+                    <textarea id="message" name="message" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" rows="5" placeholder="Sua mensagem" required></textarea>
                 </div>
-                <button type="submit" class="bg-indigo-300 text-white py-3 px-6 rounded font-bold hover:bg-blue-700 transition-colors">Enviar</button>
+                <button type="submit" class="text-white py-3 px-6 rounded font-bold transition-colors btn-color">Enviar</button>
             </form>
         </div>
     </section>
 
-    <!-- Banner -->
-    <section class="bg-gray-100 text-indigo-300 text-center py-24">
-        <h2 class="text-4xl font-bold">Distribuição rápida e confiável</h2>
-        <p class="mt-4 text-xl">Sempre gelado, sempre pronto.</p>
-    </section>
-
     <!-- Clientes Satisfeitos -->
-    <section id="clientes" class="bg-indigo-300 mx-auto py-20 text-center">
+    <section id="clientes" class="mx-auto py-20 bg-gray-100 text-center">
         <div class="container">
-        <h2 class="text-4xl font-bold mb-8 text-white">Alguns de nossos clientes satisfeitos</h2>
-            <div class="flex justify-center space-x-8 overflow-x-auto">
-                <img src="logo1.png" alt="Logo cliente 1" class="h-16">
-                <img src="logo2.png" alt="Logo cliente 2" class="h-16">
-                <img src="logo3.png" alt="Logo cliente 3" class="h-16">
+        <h2 class="text-4xl font-bold mb-8 section-title">Alguns de nossos clientes satisfeitos</h2>
+            <div class="flex flex-col items-center md:flex-row md:justify-center md:space-x-8 overflow-x-auto">
+                <img src="./images/marcas-parceiras/blood.png" alt="Blood" class="md:h-24 w-1/3 md:w-auto">
+                <img src="./images/marcas-parceiras/tangie.png" alt="Tangie" class="md:h-24 w-1/3 md:w-auto">
+                <img src="./images/marcas-parceiras/grutta.png" alt="Grutta" class="md:h-24 w-1/3 md:w-auto">
+                <img src="./images/marcas-parceiras/baroneza.png" alt="Baroneza" class="md:h-24 w-1/3 md:w-auto">
+                <img src="./images/marcas-parceiras/porks.png" alt="Porks" class="md:h-24 w-1/3 md:w-auto">
             </div>
         </div>
     </section>
 
+    <!-- Galeria -->
+    <section id="galeria" class="py-24 flex flex-col items-center">
+        <h2 class="text-4xl font-bold text-center text-white">Distribuição rápida e confiável</h2>
+        <p class="mt-4 mb-4 text-xl text-white">Sempre gelado, sempre pronto.</p>
+
+        <!-- Carousel -->
+        <div id="default-carousel" class="relative w-2/3" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-80 overflow-hidden rounded-lg md:h-96">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./images/carrossel/1.JPG" class="absolute block w-72 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./images/carrossel/2.JPG" class="absolute block w-72 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./images/carrossel/3.JPG" class="absolute block w-72 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 4 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./images/carrossel/4.JPG" class="absolute block w-72 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 5 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./images/carrossel/5.JPG" class="absolute block w-72 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 6 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./images/carrossel/6.JPG" class="absolute block w-72 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 7 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./images/carrossel/7.JPG" class="absolute block w-72 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+            </div>
+            <!-- Slider indicators -->
+            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" data-carousel-slide-to="6"></button>
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-indigo-300 text-white teste text-center py-4">
+    <footer class="text-white text-center pb-4">
         <p>&copy; 2024 Geluxe. Todos os direitos reservados.</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/snow.js"></script>
 </body>
