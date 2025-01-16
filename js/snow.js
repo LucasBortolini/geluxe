@@ -1,8 +1,7 @@
 let snowflakesCount = 200; // Snowflake count, can be overwritten by attrs
 let baseCSS = ``;
 
-
-// set global attributes
+// Set global attributes
 if (typeof SNOWFLAKES_COUNT !== 'undefined') {
   snowflakesCount = SNOWFLAKES_COUNT;
 }
@@ -18,7 +17,7 @@ function setHeightVariables() {
   pageHeightVh = (100 * bodyHeightPx / window.innerHeight);
 }
 
-// get params set in snow div
+// Get params set in snow div
 function getSnowAttributes() {
   const snowWrapper = document.getElementById('snow');
   snowflakesCount = Number(
@@ -86,10 +85,10 @@ function generateSnowCSS(snowDensity = 200) {
   let rule = baseCSS;
 
   for (let i = 1; i < snowDensity; i++) {
-    let randomX = Math.random() * 100; // vw
-    let randomOffset = Math.random() * 10 // vw;
-    let randomXEnd = randomX + randomOffset;
-    let randomXEndYoyo = randomX + (randomOffset / 2);
+    let randomX = Math.random() * 98; // vw (limita a posição inicial dentro da viewport)
+    let randomOffset = Math.random() * 10; // vw
+    let randomXEnd = Math.min(randomX + randomOffset, 98); // Mantém dentro da viewport
+    let randomXEndYoyo = Math.min(randomX + (randomOffset / 2), 98); // Evita transbordamento
     let randomYoyoTime = getRandomArbitrary(0.3, 0.8);
     let randomYoyoY = randomYoyoTime * pageHeightVh; // vh
     let randomScale = Math.random();
@@ -122,12 +121,11 @@ function createSnow() {
   getSnowAttributes();
   generateSnowCSS(snowflakesCount);
   generateSnow(snowflakesCount);
-};
-
+}
 
 window.addEventListener('resize', createSnow);
 
-// export createSnow function if using node or CommonJS environment
+// Export createSnow function if using node or CommonJS environment
 if (typeof module !== 'undefined') {
   module.exports = {
     createSnow,
