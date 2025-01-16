@@ -57,3 +57,46 @@ body {
 }
 
 /* rgb 35 91 114 */
+
+@media (min-width: 768px) {
+    .teste-banner {
+        top: 33%;
+    }
+}
+
+@media (min-width: 840px) {
+    .teste-banner {
+        top: 35%;
+    }
+}
+
+@media (min-width: 900px) {
+    .teste-banner {
+        top: 38%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .teste-banner {
+        top: 43%;
+    }
+}
+
+@media (min-width: 1130px) {
+    .teste-banner {
+        top: 45%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .teste-banner {
+        top: 48%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .teste-banner {
+        top: 50%;
+    }
+}
+    
